@@ -9,33 +9,29 @@ document.addEventListener("mousemove", (e) => {
 
 });
 
-/* REVEAL */
+/* REVEAL (IntersectionObserver = mais leve que scroll event) */
 
 const reveals = document.querySelectorAll(
   ".about-container, .project-card, .skill-card"
 );
 
-function revealElements(){
+const revealObserver = new IntersectionObserver((entries) => {
 
-  const windowHeight = window.innerHeight;
+  entries.forEach((entry) => {
 
-  reveals.forEach((element) => {
+    if(entry.isIntersecting){
 
-    const revealTop = element.getBoundingClientRect().top;
+      entry.target.classList.add("active-reveal");
 
-    if(revealTop < windowHeight - 100){
-
-      element.classList.add("active-reveal");
+      revealObserver.unobserve(entry.target);
 
     }
 
   });
 
-}
+}, { threshold: 0.15 });
 
-window.addEventListener("scroll", revealElements);
-
-revealElements();
+reveals.forEach((element) => revealObserver.observe(element));
 
 /* NAVBAR */
 
@@ -63,6 +59,35 @@ const mobileMenu = document.querySelector(".mobile-menu");
 
 menuToggle.addEventListener("click", () => {
 
-  mobileMenu.classList.toggle("active");
+  const isOpen = mobileMenu.classList.toggle("active");
+
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+
+});
+
+menuToggle.addEventListener("keydown", (e) => {
+
+  if(e.key === "Enter" || e.key === " "){
+
+    e.preventDefault();
+    menuToggle.click();
+
+  }
+
+});
+
+/* Fecha o menu mobile ao clicar em um link */
+
+document.querySelectorAll(".mobile-menu a").forEach((link) => {
+
+  link.addEventListener("click", () => {
+
+    mobileMenu.classList.remove("active");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+
+  });
 
 });

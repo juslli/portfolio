@@ -21,6 +21,24 @@
     content="Portfolio de Junio Dias, desenvolvedor front-end focado em experiências web modernas, responsivas e premium."
   >
 
+  <link rel="canonical" href="https://portfolio-ten-steel-88.vercel.app/" />
+
+  <!-- OPEN GRAPH (preview ao compartilhar no WhatsApp/LinkedIn) -->
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portfolio-ten-steel-88.vercel.app/" />
+  <meta property="og:title" content="Junio Dias | Desenvolvedor Front-End" />
+  <meta property="og:description" content="Crio experiências digitais premium, modernas e responsivas para marcas e negócios." />
+  <meta property="og:image" content="https://portfolio-ten-steel-88.vercel.app/assets/img/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- TWITTER CARD -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Junio Dias | Desenvolvedor Front-End" />
+  <meta name="twitter:description" content="Crio experiências digitais premium, modernas e responsivas para marcas e negócios." />
+  <meta name="twitter:image" content="https://portfolio-ten-steel-88.vercel.app/assets/img/og-image.jpg" />
+
   <!-- FAVICON -->
 
   <link
@@ -56,6 +74,22 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   />
+
+  <!-- STRUCTURED DATA -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Junio Dias",
+    "jobTitle": "Desenvolvedor Front-End",
+    "url": "https://portfolio-ten-steel-88.vercel.app/",
+    "sameAs": [
+      "https://github.com/juslli",
+      "https://www.linkedin.com/in/junio-dias-gianelli-60b80524a/"
+    ]
+  }
+  </script>
 
 </head>
 
@@ -103,7 +137,7 @@
 
     <!-- MOBILE BUTTON -->
 
-    <div class="menu-toggle">
+    <div class="menu-toggle" role="button" tabindex="0" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
 
       <span></span>
       <span></span>
@@ -114,7 +148,7 @@
 
   <!-- MOBILE MENU -->
 
-  <div class="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu">
 
     <a href="#">
       Início
@@ -380,6 +414,9 @@
           <img
             src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200&auto=format&fit=crop"
             alt="Projeto Barber"
+            loading="lazy"
+            width="1200"
+            height="800"
           >
 
         </div>
@@ -415,6 +452,9 @@
           <img
             src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?q=80&w=1200&auto=format&fit=crop"
             alt="Projeto Tattoo"
+            loading="lazy"
+            width="1200"
+            height="800"
           >
 
         </div>
@@ -450,6 +490,9 @@
           <img
             src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop"
             alt="Projeto Academia"
+            loading="lazy"
+            width="1200"
+            height="800"
           >
 
         </div>
